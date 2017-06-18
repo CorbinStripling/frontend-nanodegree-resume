@@ -22,24 +22,25 @@ var bio = {
     var formattedHeader = formattedName + formattedRole;
     $("#header").prepend(formattedHeader);
 
-    var formattedContact = HTMLmobile.replace("%data%",bio.contacts.mobile);
-    $("#topContacts").append(formattedContact);
-    $("#footerContacts").append(formattedContact);
+    var formattedMobile = HTMLmobile.replace("%data%",bio.contacts.mobile);
+    $("#topContacts").append(formattedMobile);
+    $("#footerContacts").append(formattedMobile);
 
-    var formattedContact = HTMLemail.replace("%data%",bio.contacts.email);
-    $("#topContacts").append(formattedContact);
-    $("#footerContacts").append(formattedContact);
+    var formattedEmail = HTMLemail.replace("%data%",bio.contacts.email);
+    $("#topContacts").append(formattedEmail);
+    $("#footerContacts").append(formattedEmail);
 
-    var formattedContact = HTMLtwitter.replace("%data%",bio.contacts.twitter);
-    $("#topContacts").append(formattedContact);
-    $("#footerContacts").append(formattedContact);
+    var formattedTwitter = HTMLtwitter.replace("%data%",bio.contacts.twitter);
+    $("#topContacts").append(formattedTwitter);
+    $("#footerContacts").append(formattedTwitter);
 
-    var formattedContact = HTMLgithub.replace("%data%",bio.contacts.github);
-    $("#topContacts").append(formattedContact);
-    $("#footerContacts").append(formattedContact);
+    var formattedGithub = HTMLgithub.replace("%data%",bio.contacts.github);
+    $("#topContacts").append(formattedGithub);
+    $("#footerContacts").append(formattedGithub);
 
-    var formattedContact = HTMLlocation.replace("%data%",bio.contacts.location);
-    $("#footerContacts").append(formattedContact);
+    var formattedLocation = HTMLlocation.replace("%data%",bio.contacts.location);
+    $("#topContacts").append(formattedLocation);
+    $("#footerContacts").append(formattedLocation);
 
     var formattedBiopic = HTMLbioPic.replace("%data%",bio.biopic);
     $("#header").append(formattedBiopic);
@@ -99,9 +100,9 @@ var education = {
       $("#education").append(HTMLschoolStart);
 
       var formattedSchoolname = HTMLschoolName.replace("%data%",education.schools[school].name);
-      var formattedSchoolname = formattedSchoolname.replace("#",education.schools[school].url);
+      var formattedSchoolnamelink = formattedSchoolname.replace("#",education.schools[school].url);
       var formattedSchooldegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
-      var formattedSchooltitle = formattedSchoolname + formattedSchooldegree;
+      var formattedSchooltitle = formattedSchoolnamelink + formattedSchooldegree;
       $(".education-entry:last").append(formattedSchooltitle);
 
       var formattedSchoollocation = HTMLschoolLocation.replace("%data%",education.schools[school].location);
@@ -150,7 +151,7 @@ var work = {
     }
   ],
   "display": function workSection(){
-    for (job in work.jobs){
+    for (var job in work.jobs){
       $("#workExperience").append(HTMLworkStart);
 
       var formattedEmployer = HTMLworkEmployer.replace("%data%",work.jobs[job].employer);
@@ -183,7 +184,7 @@ var projects = {
     }
   ],
   "display":function projectsSection(){
-    for(project in projects.projects){
+    for(var project in projects.projects){
       $("#projects").append(HTMLprojectStart);
 
       var formattedProjecttitle = HTMLprojectTitle.replace("%data%",projects.projects[project].title);
@@ -195,11 +196,11 @@ var projects = {
       var formattedProjectdescription = HTMLprojectDescription.replace("%data%",projects.projects[project].description);
       $(".project-entry:last").append(formattedProjectdescription);
 
-      for(image in projects.projects[project].images){
+      for(var image in projects.projects[project].images){
         var formattedProjectimages = HTMLprojectImage.replace("%data%",projects.projects[project].images[image]);
         $(".project-entry:last").append(formattedProjectimages);
       }
-    };
+    }
   }
 };
 
@@ -231,4 +232,4 @@ function initializeMap() {
   var map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
   $("#map").append(map);
-};
+}
