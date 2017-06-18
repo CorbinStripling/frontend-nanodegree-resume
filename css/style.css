@@ -165,6 +165,8 @@ ul {
 
 img {
   padding: 10px;
+  max-width: 225px;
+  max-height: 225px;
 }
 
 span {
