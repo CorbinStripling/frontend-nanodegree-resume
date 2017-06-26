@@ -36,7 +36,7 @@ var bio = {
     for(var skill = 0; skill < bio.skills.length; skill++){
       var formattedSkill = HTMLskills.replace("%data%",bio.skills[skill]);
       $("#skills").append(formattedSkill);
-    };
+    }
   }
 };
 
@@ -91,8 +91,8 @@ var education = {
       for(var major = 0; major < education.schools[school].majors.length; major++){
         var formattedSchoolmajor = HTMLschoolMajor.replace("%data%",education.schools[school].majors[major]);
         $(".education-entry:last").append(formattedSchoolmajor);
-      };
-    };
+      }
+    }
 
     for(var course = 0; course < education.onlineCourses.length; course++){
       $("#education").append(HTMLonlineClasses, HTMLschoolStart);
@@ -103,7 +103,7 @@ var education = {
       var formattedOnlinedates = HTMLonlineDates.replace("%data%",education.onlineCourses[course].dates);
       var formattedOnlineurl = HTMLonlineURL.replace("#", education.onlineCourses[course].url);
       $(".education-entry:last").append(formattedOnlinename, formattedOnlinedates, formattedOnlineurl);
-      };
+      }
   }
 };
 
